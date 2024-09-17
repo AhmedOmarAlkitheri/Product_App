@@ -202,14 +202,11 @@ class _OrderState extends State<Order> {
                             i != null) {
                           Navigator.pushNamed(context, "/home");
                         } else if (i == null) {
-                          setState(() {
-                            connection_time = "يجب تحديد وقت التوصيل";
-                          });
+                          connection_time = "يجب تحديد وقت التوصيل";
                         } else if (Payment_Method == null) {
-                          setState(() {
-                            paymentmethod = "يجب تحديد طريقة واحدة للدفع";
-                          });
+                          paymentmethod = "يجب تحديد طريقة واحدة للدفع";
                         }
+                        setState(() {});
                         // formkey.currentState!.validate();
                       },
                       child: Text(

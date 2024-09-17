@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:product_app/model/product.dart';
 import 'package:product_app/views/IncreamentScreen.dart';
-import 'package:product_app/views/Login.dart';
-import 'package:product_app/views/Order.dart';
-import 'package:product_app/views/cardView.dart';
-import 'package:product_app/views/details.dart';
-import 'package:product_app/views/productView.dart';
-import 'package:product_app/views/splash_screen.dart';
+import 'package:product_app/views/Screen/Favorite.dart';
+import 'package:product_app/views/Screen/HomeScreen.dart';
+import 'package:product_app/views/Screen/Login.dart';
+import 'package:product_app/views/Screen/Order.dart';
+import 'package:product_app/views/Screen/cardView.dart';
+import 'package:product_app/views/Screen/details.dart';
+import 'package:product_app/views/Screen/splash_screen.dart';
 
 class AppRoutes {
   static Route<dynamic>? routeManager(RouteSettings Setting) {
@@ -21,7 +22,19 @@ class AppRoutes {
       case "/home":
         return MaterialPageRoute(
           builder: (context) {
-            return HomeScreen();
+            return Home();
+          },
+        );
+      /*  builder: (context) {
+              return HomeScreen( products: Setting.arguments as List <Product>,);
+            },
+            settings: Setting);
+          */
+
+      case "/Favorite":
+        return MaterialPageRoute(
+          builder: (context) {
+            return Favorite();
           },
         );
 
@@ -59,12 +72,12 @@ class AppRoutes {
             return SplashScreen();
           },
         );
-      default:
-        return MaterialPageRoute(
-          builder: (context) {
-            return HomeScreen();
-          },
-        );
+      // default:
+      //   return MaterialPageRoute(
+      //     builder: (context) {
+      //       return SplashScreen();
+      //     },
+      //   );
     }
   }
 }

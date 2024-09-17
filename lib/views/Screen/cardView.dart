@@ -10,7 +10,7 @@ class CartScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown[500],
+        //  backgroundColor: Colors.brown[500],
         title: Text(
           "Card",
           style: TextStyle(
@@ -130,7 +130,7 @@ class CartScreen extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          ElevatedButton(
+                          MaterialButton(
                               // style: ButtonStyle() ,
                               onPressed: () {
                                 Navigator.pushNamed(context, "/home");

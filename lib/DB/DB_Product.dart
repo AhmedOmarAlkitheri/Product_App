@@ -1,3 +1,6 @@
+import 'package:dio/dio.dart';
+import 'package:product_app/model/product.dart';
+
 class DbProduct {
   List<Map<String, dynamic>> products = [
     {
@@ -963,5 +966,25 @@ class DbProduct {
 
   List<Map<String, dynamic>> getProduct() {
     return products;
+  }
+
+  Future<List<Product>?> getProducts() async {
+    Dio dio = Dio();
+
+    Response res = await dio.get('https://fakestoreapi.com/products');
+    print(res);
+    List<Product>? allPrpducts =
+        res.data.map<Product>((p) => Product.fromrow(p)).toList() ??
+            [
+              Product(
+                  id: 1,
+                  title: "ef",
+                  price: 23,
+                  img: "dfgfgf",
+                  isFavortie: false)
+            ];
+    print("asdfgh");
+    print(allPrpducts);
+    return allPrpducts;
   }
 }

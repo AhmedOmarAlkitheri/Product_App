@@ -86,7 +86,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       //     mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           height: 100,
                           child: ListView.builder(
                             itemCount: widget.p.image.length,
@@ -120,6 +120,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             scrollDirection: Axis.horizontal,
                           ),
                         ),
+
                         Container(
                           margin: EdgeInsets.all(10),
                           child: Row(
